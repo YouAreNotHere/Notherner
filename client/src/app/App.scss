@@ -1,0 +1,303 @@
+$light-background: aliceblue;
+$light-text: black;
+$light-button-background:  aliceblue;
+$light-button-text: black;
+$light-inner-background: white;
+$light-nav-background: #c7c7ff;
+$light-icon-color: black;
+$light-modal-background: #c7c7ff;
+$light-active-button: white;
+
+$dark-background: #282c34;
+$dark-text: gainsboro;
+$dark-button-background: gray;
+$dark-button-text: white;
+$dark-inner-background: #30303d;
+$dark-nav-background: #0b0b40;
+$dark-icon-color: white;
+$dark-modal-background: darkcyan;
+$dark-active-button: black;
+
+
+:root {
+  --background-color: #{$light-background};
+  --text-color: #{$light-text};
+  --button-background: #{$light-button-background};
+  --button-text: #{$light-button-text};
+  --inner-background: #{$light-inner-background};
+  --nav-background: #{$light-nav-background};
+  --icon-color: #{$light-icon-color};
+  --modal-background: #{$light-modal-background};
+  --active-button: #{$light-active-button};
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  min-height: 120vh;
+}
+
+.dark-theme {
+  --background-color: #{$dark-background};
+  --text-color: #{$dark-text};
+  --button-background: #{$dark-button-background};
+  --button-text: #{$dark-button-text};
+  --inner-background: #{$dark-inner-background};
+  --nav-background: #{$dark-nav-background};
+  --icon-color: #{$dark-icon-color};
+  --modal-background: #{$dark-modal-background};
+  --active-button: #{$dark-active-button};
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  width: 100%;
+}
+
+button {
+  display: flex;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+button:active{
+  background: var(--active-button);
+}
+
+button:hover{
+  opacity: 0.5;
+}
+
+text:hover{
+  opacity: 0.5;
+}
+
+.App {
+  width: 80%;
+  background-color: var(--inner-background);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--text-color);
+  padding: 0;
+  min-height: 120vh;
+  margin: auto;
+}
+
+.app-wrapper{
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.addTodo-searchInput-logout-bar{
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: space-around;
+  width: 80%;
+  z-index: 2;
+  align-items: center;
+  background: var(--nav-background);
+}
+
+.open-addTodo-modal__button {
+  min-width: 130px;
+  max-width: 200px;
+  height: 26px;
+}
+
+@media (max-width: 470px) {
+  .open-addTodo-modal__button {
+    min-width: 60px;
+    width: 70px;
+    height: auto;
+    margin: 0 10px 0 10px;
+  }
+}
+
+.сompleted {
+  color: gray;
+  text-decoration: line-through;
+  display: flex;
+}
+
+.todo_bar{
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.addPadding {
+  margin: 5px;
+}
+
+.completedFilter {
+  display: none;
+}
+
+.edit-delete__buttons-wrapper{
+  display: flex;
+  gap:20px;
+  width: 60px;
+  justify-content: space-between;
+}
+
+.edit-todo-button{
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.edit-todo-icon{
+  padding: 0;
+  display: block;
+  width: 19px;
+  height: 19px;
+  position: relative;
+  top: -10px;
+  left: -10px;
+}
+
+.svg{
+  width: 19px;
+  height: 19px;
+}
+
+.delete-todo__button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-todo__button::before,
+.delete-todo__button::after {
+  content: '';
+  position: absolute;
+  top: 9px;
+  left: -3px;
+  width: 25px;
+  height: 2px;
+  background: var(--icon-color);
+}
+
+.delete-todo__button::before {
+  transform: rotate(45deg);
+}
+
+.delete-todo__button::after {
+  transform: rotate(-45deg);
+}
+
+.task-text,
+.сompleted-text {
+  min-width: 50%;
+  max-width: 70%;
+  padding: 10px;
+  margin: 0 30px 0 0;
+  white-space: normal; /* Позволяет обычный перенос строк */
+  word-wrap: break-word; /* Позволяет длинным словам переноситься */
+  overflow-wrap: break-word; /* Современный аналог */
+}
+
+.focused-todo{
+  min-width: 50%;
+  max-width: 70%;
+  //padding:  10px 0 10px 0;
+  padding: 10px;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  background-color: aliceblue;
+  color: black;
+  border-radius: 25px;
+  margin: 0 30px 0 0;
+}
+
+.сompleted-text{
+  text-decoration: line-through;
+  color: gray;
+  opacity: 0.5;
+}
+
+.сompleted-text:hover{
+  opacity: 1;
+}
+
+.сompleted-text:active{
+  opacity: 0.5;
+}
+
+.task-text:hover{
+  opacity: 0.5;
+}
+
+.task-text:active{
+  opacity: 0.2;
+}
+
+.todos-wrapper{
+  margin-top: 60px;
+  min-width: 30%;
+  padding: 0;
+  list-style-type: none;
+}
+
+@media (max-width: 500px) {
+  .todos-wrapper{
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 500px) and (max-width: 900px) {
+  .todos-wrapper{
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 900px) {
+  .todos-wrapper{
+    max-width: 40%;
+  }
+}
+
+.todos-list{
+  list-style-type: none;
+  padding: 0;
+}
+
+.display-hidden{
+  display: none;
+}
+
+.logout-button{
+  min-width: 55px;
+  max-width: 200px;
+  height: 26px;
+}
+
+@media (max-width: 771px) {
+  .logout-button{
+    display: none;
+  }
+}
