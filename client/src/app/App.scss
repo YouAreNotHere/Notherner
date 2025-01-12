@@ -1,9 +1,9 @@
-$light-background: aliceblue;
+$light-background: #F4F4F2;
 $light-text: black;
 $light-button-background:  aliceblue;
 $light-button-text: black;
 $light-inner-background: white;
-$light-nav-background: #c7c7ff;
+$light-nav-background: #FFFFFF;
 $light-icon-color: black;
 $light-modal-background: #c7c7ff;
 $light-active-button: white;
@@ -81,8 +81,8 @@ text:hover{
 }
 
 .App {
-  width: 80%;
-  background-color: var(--inner-background);
+  width: 100%;
+  //background-color: var(--inner-background);
   text-align: center;
   display: flex;
   flex-direction: column;
